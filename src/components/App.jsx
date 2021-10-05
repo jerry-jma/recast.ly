@@ -1,3 +1,7 @@
+import Search from './Search.js';
+import VideoList from './VideoList.js';
+import VideoListEntry from './VideoListEntry.js';
+
 var App = () => (
   <div>
     <nav className="navbar">
