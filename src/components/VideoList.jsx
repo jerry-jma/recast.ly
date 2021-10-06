@@ -1,11 +1,14 @@
-import data from '/src/data/exampleVideoData.js';
 import VideoListEntry from './VideoListEntry.js';
 
-var VideoList = () => (
+
+var VideoList = (props) => (
   <div className="video-list">
-    {data.map((video) =>
-      <VideoListEntry video={video}/>
-    )}
+    {console.log(props)}
+    {props.videos.map((video, index) => {
+      if (index !== props.selectedVideo) {
+        return <VideoListEntry onClick={(event) => props.onClick(index)} video={video} key={video.etag}/>;
+      }
+    })}
   </div>
 );
 
